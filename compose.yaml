@@ -1,0 +1,11 @@
+services:
+  api:
+    platform: linux/amd64
+    build: .
+    container_name: fastapi-application
+    command: sh -c "uvicorn main:app --reload --port=8000 --host=0.0.0.0"
+    environment:
+      PORT: 8000
+    ports:
+      - '8000:8000'
+    restart: "no"
